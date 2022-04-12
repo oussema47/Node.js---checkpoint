@@ -1,8 +1,9 @@
-var ht = require("http");
+const http = require('http');
+const url = process.argv[2];
 
-ht.get(process.argv[2], function (r) {
-  r.setEncoding("utf8");
-  r.on("data", function (d) {
-    console.log(d);
-  });
+http.get(url, function(res) {
+    res.setEncoding('utf8');
+    res.on('data', function(data) {
+        console.log(data);
+    });
 });

@@ -1,3 +1,7 @@
-var fs = require("fs");
-var n = fs.readFileSync(process.argv[2]).toString().split("\n").length - 1;
-console.log(n);
+const fs = require('fs');
+
+const path = process.argv[2];
+const data = fs.readFileSync(path, 'utf-8');
+const strData = data.toString();
+const newLines = strData.split('\n').length - 1;
+console.log(newLines);
